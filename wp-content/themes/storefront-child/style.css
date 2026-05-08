@@ -1,0 +1,506 @@
+/*
+Theme Name: Storefront Child
+Template: storefront
+*/
+
+/* Đổi màu nền toàn bộ trang web (Tác động lên index.php và single.php) */
+body,
+.site-main {
+  background-color: #e7f8ff !important;
+}
+
+/* Đổi màu nền khu vực nội dung chính */
+.site-content {
+  background-color: #e7f8ff;
+}
+
+/* Đổi màu các nút bấm: Thêm vào giỏ hàng, Thanh toán, Tìm kiếm */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.added_to_cart {
+  background-color: #ff69b4 !important; /* Màu hồng đậm */
+  color: white !important;
+  border-radius: 20px !important; /* Bo tròn góc nút bấm */
+  border: none !important;
+}
+
+/* Đổi màu nút bấm khi trỏ chuột vào (Hover) */
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.button:hover {
+  background-color: #ff1493 !important; /* Màu hồng tối hơn một chút */
+}
+
+/* Đổi màu giá tiền sản phẩm */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: #e0245e !important; /* Màu đỏ đô nổi bật */
+  font-weight: bold;
+}
+
+/* Đổi màu nền bao bọc chân trang để tạo hiệu ứng tràn viền */
+.site-footer {
+  background-color: #e7f8ff !important;
+  padding-top: 20px !important;
+}
+
+/* Đồng bộ màu nền ngoài cùng của toàn bộ trang web */
+body {
+  background-color: #e7f8ff !important;
+}
+
+/* Căn chỉnh lại khoảng cách của footer nếu cần thiết */
+.site-footer .col-full {
+  margin-bottom: 0 !important;
+}
+
+/* --- TÙY BIẾN HEADER GIỐNG BENI BEAR --- */
+
+/* 1. Ẩn tiêu đề trang chủ (Dự phòng nếu Elementor không ẩn được) */
+.home .entry-header {
+  display: none !important;
+}
+
+/* 2. Xóa khoảng trắng thừa giữa Header và Banner */
+.site-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.site-content {
+  padding-top: 0 !important;
+}
+
+/* 3. Tạo dải màu xanh dương cho thanh Menu */
+.storefront-primary-navigation {
+  background-color: #80a8d6 !important; /* Màu xanh dương giống ảnh mẫu */
+  width: 100% !important;
+  margin-top: 15px !important;
+}
+
+/* 4. Căn giữa các mục trong Menu và đổi sang chữ màu trắng */
+.main-navigation ul.menu,
+.main-navigation ul.nav-menu {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap;
+  margin: 0 !important;
+}
+
+/* 5. Chỉnh font chữ, khoảng cách và in hoa */
+.main-navigation ul.menu > li > a,
+.main-navigation ul.nav-menu > li > a {
+  color: #ffffff !important; /* Chữ màu trắng */
+  font-weight: bold !important;
+  text-transform: uppercase !important; /* Tự động viết hoa */
+  padding: 15px 25px !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* 6. Hiệu ứng khi trỏ chuột vào Menu (Sáng màu hơn) */
+.main-navigation ul.menu > li > a:hover,
+.main-navigation ul.nav-menu > li > a:hover {
+  background-color: #7599de !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Phá vỡ khung giới hạn của theme Storefront để banner tràn viền 100% */
+.home .site-content .col-full {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ========================================================
+   TÙY CHỈNH HEADER (ĐẦU TRANG) VÀ MENU 
+======================================================== */
+
+/* --- 1. ẨN CHỮ GIỎ HÀNG (CHỈ GIỮ LẠI ICON) --- */
+/* Ẩn phần chữ hiển thị số tiền và số lượng sản phẩm */
+/* .site-header-cart .cart-contents .amount,
+.site-header-cart .cart-contents .count {
+  display: none !important;
+} */
+/* --- 2. THANH MENU 1 HÀNG VÀ CỐ ĐỊNH (STICKY) --- */
+/* Đóng băng thanh menu ở sát mép trên cùng của trình duyệt khi cuộn chuột */
+.storefront-primary-navigation {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* Xóa giới hạn chiều rộng mặc định của thẻ col-full trong thanh menu để giỏ hàng không bị đè lên menu */
+.storefront-primary-navigation .col-full {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.storefront-primary-navigation .main-navigation {
+  flex-grow: 1; /* Cho menu tự động co giãn chiếm phần không gian trống */
+}
+
+/* Ép các mục menu nằm trên đúng 1 hàng ngang */
+.main-navigation ul.menu,
+.main-navigation ul.nav-menu {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Lệnh này cấm các mục menu bị rớt xuống dòng */
+  justify-content: center !important;
+  white-space: nowrap !important; /* Giữ chữ dính liền nhau */
+}
+
+/* Giảm khoảng cách và cỡ chữ một chút để không bị chật chỗ */
+.main-navigation ul.menu > li > a,
+.main-navigation ul.nav-menu > li > a {
+  padding: 15px 15px !important;
+  font-size: 16px !important;
+}
+
+/* --- 3. DÀN HÀNG NGANG CHO TÊN SHOP VÀ Ô TÌM KIẾM --- */
+/* Điều chỉnh lại khoảng cách trên dưới của phần chứa logo/tên shop */
+
+/* Sử dụng kỹ thuật Flexbox để ép Tên Shop nằm bên trái, Ô tìm kiếm nằm bên phải */
+.site-header > .col-full {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Cấu hình phần Tên Shop/Logo */
+.site-branding {
+  width: auto !important;
+}
+
+/* Cấu hình phần Ô tìm kiếm */
+.site-search {
+  width: 350px !important; /* Có thể thay đổi số này để ô tìm kiếm dài hoặc ngắn hơn */
+}
+
+/* Biến lưới sản phẩm WooCommerce thành Carousel khi dùng Shortcode trong Elementor */
+.custom-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-carousel-track-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* Ẩn thanh cuộn */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+.custom-carousel-track-container::-webkit-scrollbar {
+  display: none;
+}
+
+.elementor-widget-shortcode ul.products {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+  padding: 10px 5px !important; /* Tránh bị cắt bóng */
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Xóa pseudo-elements mặc định của WooCommerce để tránh bị tính thành phần tử flex gây thừa khoảng trống */
+.elementor-widget-shortcode ul.products::before,
+.elementor-widget-shortcode ul.products::after {
+  display: none !important;
+}
+
+.elementor-widget-shortcode ul.products::-webkit-scrollbar {
+  display: none;
+}
+
+.elementor-widget-shortcode ul.products li.product {
+  flex: 0 0 calc(25% - 15px) !important;
+  max-width: calc(25% - 15px) !important;
+  margin-bottom: 0 !important;
+  clear: none !important;
+}
+
+@media (max-width: 1024px) {
+  .elementor-widget-shortcode ul.products li.product {
+    flex: 0 0 calc(33.333% - 14px) !important;
+    max-width: calc(33.333% - 14px) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .elementor-widget-shortcode ul.products li.product {
+    flex: 0 0 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .elementor-widget-shortcode ul.products li.product {
+    flex: 0 0 80% !important;
+    max-width: 80% !important;
+  }
+}
+
+/* Nút bấm Next / Prev */
+.custom-carousel-prev,
+.custom-carousel-next {
+  background-color: #fff;
+  border: 1px solid #eef2f5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #333;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.custom-carousel-prev:hover,
+.custom-carousel-next:hover {
+  background-color: #e7f8ff;
+  color: #ff69b4;
+  border-color: #e7f8ff;
+}
+
+.custom-carousel-prev {
+  left: -20px;
+}
+
+.custom-carousel-next {
+  right: -20px;
+}
+
+/* Hiệu ứng phóng to ảnh sản phẩm WooCommerce khi Hover */
+.woocommerce ul.products li.product a img {
+  transition: transform 0.3s ease !important;
+}
+.woocommerce ul.products li.product:hover a img {
+  transform: scale(1.06) !important; /* Phóng to 6% */
+}
+
+/* Đồng bộ chiều cao và căn hàng cho toàn bộ card sản phẩm */
+.woocommerce ul.products,
+.elementor-widget-shortcode ul.products {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+}
+
+.woocommerce ul.products li.product,
+.elementor-widget-shortcode ul.products li.product {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.woocommerce ul.products li.product > a,
+.elementor-widget-shortcode ul.products li.product > a {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+.woocommerce ul.products li.product > a img,
+.elementor-widget-shortcode ul.products li.product > a img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+  background-color: #ffffff !important;
+  margin-bottom: 20px !important;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.elementor-widget-shortcode ul.products li.product .woocommerce-loop-product__title {
+  min-height: 3.4em !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.woocommerce ul.products li.product .price,
+.elementor-widget-shortcode ul.products li.product .price {
+  min-height: 4.2em !important;
+}
+
+.woocommerce ul.products li.product .button,
+.elementor-widget-shortcode ul.products li.product .button {
+  margin-top: auto !important;
+}
+
+/* ========================================================
+   TÙY CHỈNH Ô SẢN PHẨM GIỐNG BENI BEAR
+======================================================== */
+
+/* 1. Tạo hình dáng Thẻ (Card) với nền trắng, bo góc và đổ bóng */
+.elementor-widget-shortcode ul.products li.product {
+  background-color: #ffffff !important;
+  border-radius: 0px 0px 15px 15px !important;
+  overflow: hidden !important; /* Cắt phần ảnh bị tràn ở các góc bo */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05) !important; /* Đổ bóng xám nhạt */
+  padding-bottom: 20px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid #eef2f5 !important;
+}
+
+/* Áp cùng kiểu card cho toàn bộ danh sách sản phẩm WooCommerce */
+.woocommerce ul.products li.product {
+  background-color: #ffffff !important;
+  border-radius: 0px 0px 15px 15px !important;
+  overflow: hidden !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05) !important;
+  padding-bottom: 20px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid #eef2f5 !important;
+  text-align: center !important;
+}
+
+/* Hiệu ứng trượt lên một chút khi di chuột vào Thẻ */
+.elementor-widget-shortcode ul.products li.product:hover {
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1) !important;
+  transition: 0.3s ease !important;
+}
+
+.woocommerce ul.products li.product:hover {
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1) !important;
+  transition: 0.3s ease !important;
+}
+
+/* 2. Ép ảnh sản phẩm ôm sát viền trên cùng */
+.elementor-widget-shortcode ul.products li.product img {
+  width: 100% !important;
+  margin-bottom: 20px !important;
+}
+
+.woocommerce ul.products li.product img {
+  width: 100% !important;
+  margin-bottom: 20px !important;
+}
+
+/* 3. Căn giữa Tiêu đề sản phẩm và đổi màu */
+.elementor-widget-shortcode
+  ul.products
+  li.product
+  .woocommerce-loop-product__title {
+  text-align: center !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #333333 !important;
+  padding: 0 10px !important;
+  margin-bottom: 15px !important;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  text-align: center !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #333333 !important;
+  padding: 0 10px !important;
+  margin-bottom: 15px !important;
+}
+
+/* 4. Tạo đường kẻ đứt màu hồng và Căn giữa Giá tiền */
+.elementor-widget-shortcode ul.products li.product .price {
+  text-align: center !important;
+  color: #ff69b4 !important; /* Màu hồng đậm */
+  font-size: 18px !important;
+  font-weight: bold !important;
+  border-top: 1px dashed #ffb6c1 !important; /* Đường kẻ đứt màu hồng nhạt */
+  margin: 0 20px !important; /* Thụt lề đường kẻ vào một chút */
+  padding-top: 15px !important;
+}
+
+.woocommerce ul.products li.product .price {
+  text-align: center !important;
+  color: #ff69b4 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  border-top: 1px dashed #ffb6c1 !important;
+  margin: 0 20px !important;
+  padding-top: 15px !important;
+}
+
+.woocommerce ul.products li.product .price del {
+  color: #f3a6c8 !important;
+  opacity: 1 !important;
+  margin-right: 10px !important;
+}
+
+.woocommerce ul.products li.product .price ins {
+  text-decoration: none !important;
+}
+
+.woocommerce ul.products li.product .onsale {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px !important;
+  padding: 6px 12px !important;
+  border: 1px solid #f3a6c8 !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  color: #ff69b4 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.woocommerce ul.products li.product .button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto 0 !important;
+  padding: 12px 24px !important;
+  border-radius: 999px !important;
+  background-color: #ff69b4 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  border: none !important;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  background-color: #ff1493 !important;
+  color: #ffffff !important;
+}
+
+/* ========================================================
+   SỬA LỖI HIỂN THỊ GIỎ HÀNG (DROPDOWN & ICON)
+======================================================== */
+
+/* 1. Thiết lập mốc tọa độ cho dropdown giỏ hàng và tạo khoảng cách với mép phải */
+.site-header-cart {
+  position: relative !important;
+  margin-right: 30px !important; /* Đẩy cụm giỏ hàng cách lề phải 30px để có khoảng trống */
+  list-style-type: none !important;
+}
+.site-header-cart .cart-contents {
+  display: flex !important;
+  gap: 40px !important; /* Tạo khoảng cách giữa icon giỏ hàng và số lượng/giá tiền */
+}
