@@ -54,6 +54,7 @@ Hệ thống vận hành dựa trên các công nghệ mã nguồn mở (Open-so
 7. Tài khoản quản trị (Demo)
 - Tên đăng nhập: admin
 - Mật khẩu: 123456
+  
 8.Hình ảnh minh họa hệ thống
 
 <img width="1901" height="907" alt="trang chu" src="https://github.com/user-attachments/assets/6b54ad3e-af1b-4366-88e2-2969e68e5caa" />
