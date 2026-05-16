@@ -72,6 +72,7 @@ Hình 3: Mã QR thanh toán tự động tạo theo giá trị đơn hàng thự
 <img width="455" height="667" alt="chatbot" src="https://github.com/user-attachments/assets/2cb4bfd4-ca87-4c29-bbb7-b2d77105edd8" />
 
 Hình 4: Giao diện Chatbox tư vấn
+
 9. Đường dẫn Video Demo và Deploy Online
 Video Demo  hệ thống: https://drive.google.com/drive/folders/1bKGh2zAGfV2O9fPRBECLeF2iVWZrh5TE?usp=drive_link
 
