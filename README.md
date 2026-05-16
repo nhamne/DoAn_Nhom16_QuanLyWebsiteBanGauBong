@@ -1,4 +1,4 @@
-<img width="1901" height="867" alt="thanh toan QR" src="https://github.com/user-attachments/assets/57535176-1240-4266-aa95-6fab1d2855d6" />ĐỀ TÀI: WEBSITE QUẢN LÝ SHOP BÁN GẤU BÔNG (TEDDY SHOP)
+ĐỀ TÀI: WEBSITE QUẢN LÝ SHOP BÁN GẤU BÔNG (TEDDY SHOP)
 1. Giới thiệu dự án
 Dự án Teddy Shop là một hệ thống website thương mại điện tử chuyên kinh doanh các mặt hàng gấu bông, thú nhồi bông. Website được xây dựng trên nền tảng WordPress kết hợp với các công nghệ mã nguồn mở hiện đại nhằm tối ưu hóa quy trình bán hàng cho các cửa hàng vừa và nhỏ. Hệ thống tập trung vào tính tiện lợi cho khách vãng lai, tích hợp các công cụ Marketing và thanh toán tự động giúp tăng trải nghiệm mua sắm.
 2. Danh sách thành viên và MSSV
